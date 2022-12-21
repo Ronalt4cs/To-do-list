@@ -41,9 +41,9 @@ const addNewTask = () => {
    checkBoxTask.type = 'checkbox';
    checkBoxTask.value = 'unchecked';
 
-   textTask.textContent = inputAddTask.value;
-   btnRemoveTask.src = './assets/icon-trash.svg';
-   btnRemoveTask.alt = 'icon trash';
+
+   textTask.textContent = inputAddTask.value
+   btnRemoveTask.src = './assets/icon-trash.svg'
    btnRemoveTask.classList.add('btn-remove-task');
 
    divTextContent.appendChild(checkBoxTask);
