@@ -14,7 +14,7 @@ const changeTheme = (newTheme) => {
 
       root.style.setProperty('--bg-color', '#1b2028');
       root.style.setProperty('--text-color', '#FFF');
-      btnTheme.src = '../assets/dark-mode.svg';
+      btnTheme.src = './assets/dark-mode.svg';
       lineFooter.style.backgroundColor = '#FFF';
 
       return currentTheme = 'dark';
@@ -22,7 +22,7 @@ const changeTheme = (newTheme) => {
 
    root.style.setProperty('--bg-color', '#F5F5F5');
    root.style.setProperty('--text-color', '#1b2028');
-   btnTheme.src = '../assets/light-mode.svg';
+   btnTheme.src = './assets/light-mode.svg';
    lineFooter.style.backgroundColor = '#000';
 
 
@@ -41,9 +41,9 @@ const addNewTask = () => {
    checkBoxTask.type = 'checkbox';
    checkBoxTask.value = 'unchecked';
 
-
-   textTask.textContent = inputAddTask.value
-   btnRemoveTask.src = '../assets/icon-trash.svg'
+   textTask.textContent = inputAddTask.value;
+   btnRemoveTask.src = './assets/icon-trash.svg';
+   btnRemoveTask.alt = 'icon trash';
    btnRemoveTask.classList.add('btn-remove-task');
 
    divTextContent.appendChild(checkBoxTask);
@@ -107,4 +107,13 @@ btnRemoveAllTasks.addEventListener('click', (event) => {
 
    taskContainer.innerHTML = '';
    return
-})
+});
+
+inputAddTask.addEventListener('keypress', (event) => {
+
+   if (event.key === 'Enter' && inputAddTask.value) {
+      addNewTask();
+      return
+   }
+   inputAddTask.style.border = '2px solid red';
+});
