@@ -14,7 +14,7 @@ const changeTheme = (newTheme) => {
 
       root.style.setProperty('--bg-color', '#1b2028');
       root.style.setProperty('--text-color', '#FFF');
-      btnTheme.src = '../assets/dark-mode.svg';
+      btnTheme.src = './assets/dark-mode.svg';
       lineFooter.style.backgroundColor = '#FFF';
 
       return currentTheme = 'dark';
@@ -22,7 +22,7 @@ const changeTheme = (newTheme) => {
 
    root.style.setProperty('--bg-color', '#F5F5F5');
    root.style.setProperty('--text-color', '#1b2028');
-   btnTheme.src = '../assets/light-mode.svg';
+   btnTheme.src = './assets/light-mode.svg';
    lineFooter.style.backgroundColor = '#000';
 
 
