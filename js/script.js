@@ -2,8 +2,10 @@ const inputAddTask = document.getElementById('input-add-task');
 const btnAddTask = document.querySelector('button');
 const taskContainer = document.querySelector('.task-container');
 const btnTheme = document.getElementById('btn-theme');
+const btnRemoveAllTasks = document.querySelector('.btn-clear-all');
 const root = document.querySelector(':root');
 const body = document.querySelector('body');
+const lineFooter = document.querySelector('.line');
 
 let currentTheme = 'light';
 const changeTheme = (newTheme) => {
@@ -13,6 +15,7 @@ const changeTheme = (newTheme) => {
       root.style.setProperty('--bg-color', '#1b2028');
       root.style.setProperty('--text-color', '#FFF');
       btnTheme.src = '../assets/dark-mode.svg';
+      lineFooter.style.backgroundColor = '#FFF';
 
       return currentTheme = 'dark';
    }
@@ -20,6 +23,8 @@ const changeTheme = (newTheme) => {
    root.style.setProperty('--bg-color', '#F5F5F5');
    root.style.setProperty('--text-color', '#1b2028');
    btnTheme.src = '../assets/light-mode.svg';
+   lineFooter.style.backgroundColor = '#000';
+
 
    return currentTheme = 'light';
 }
@@ -34,6 +39,8 @@ const addNewTask = () => {
 
    task.classList.add('task');
    checkBoxTask.type = 'checkbox';
+   checkBoxTask.value = 'unchecked';
+
 
    textTask.textContent = inputAddTask.value
    btnRemoveTask.src = '../assets/icon-trash.svg'
@@ -47,6 +54,24 @@ const addNewTask = () => {
    task.appendChild(divDeleteTask);
 
    taskContainer.appendChild(task);
+
+   checkBoxTask.addEventListener('change', (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+
+      if (event.target.value === 'unchecked') {
+         textTask.style.textDecoration = 'line-through';
+         checkBoxTask.value = 'checked';
+         return
+      }
+      textTask.style.textDecoration = 'none';
+      checkBoxTask.value = 'unchecked';
+      return
+   });
+
+   btnRemoveTask.addEventListener('click', () => {
+      taskContainer.removeChild(task);
+   });
 
    inputAddTask.style.border = '2px solid #1b2028';
    return inputAddTask.value = '';
@@ -76,13 +101,10 @@ btnAddTask.addEventListener('click', (event) => {
    inputAddTask.style.border = '2px solid red';
 });
 
+btnRemoveAllTasks.addEventListener('click', (event) => {
+   event.stopPropagation();
+   event.preventDefault();
 
-inputAddTask.addEventListener('keypress', (event) => {
-
-   if (event.key === 'Enter' && inputAddTask.value) {
-      addNewTask();
-      return
-   }
-   return inputAddTask.style.border = '2px solid red';
-
-});
+   taskContainer.innerHTML = '';
+   return
+})
