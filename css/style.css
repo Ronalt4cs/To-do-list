@@ -18,7 +18,8 @@ body {
    font-weight: 500;
 
    min-height: 100vh;
-   background-color: var(--light);
+   background-color: var(--bg-color);
+   color: var(--text-color);
 }
 
 header {
@@ -28,18 +29,21 @@ header {
 
    width: 690px;
 
-   font-family: 'Rubiki', sans-serif;
+   margin-bottom: 32px;
+
    font-weight: 600;
    font-size: 48px;
 }
 header img {
    cursor: pointer;
 }
+
 input[type="text"] {
    width: 600px;
    height: 58px;
 
    padding: 20px;
+   
    border-radius: 8px;
 }
 
@@ -56,7 +60,7 @@ button {
    border-radius: 4px;
 }
 
-.tasks-containter {
+.task-container {
 
    max-width: 690px;
    margin-top: 32px;
