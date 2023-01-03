@@ -34,6 +34,7 @@ header {
    font-weight: 600;
    font-size: 48px;
 }
+
 header img {
    cursor: pointer;
 }
@@ -47,7 +48,7 @@ input[type="text"] {
    border-radius: 8px;
 }
 
-button {
+.btn-add {
    all: unset;
    cursor: pointer;
 
@@ -56,16 +57,21 @@ button {
 
    text-align: center;
    font-size: larger;
-   
+
    background-color: var(--blue);
    border-radius: 4px;
 }
 
+.btn-add:hover {
+   background-color: var(--bg-color);
+   border: solid 1px var(--blue);
+}
+
 .task-container {
 
-   max-width: 690px;
+   width: 690px;
    margin-top: 32px;
-   
+
    padding: 10px;
 }
 
@@ -104,6 +110,7 @@ input[type="checkbox"] {
    width: 32px;
    height: 32px;
 }
+
 footer {
    display: flex;
    flex-direction: column;
