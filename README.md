@@ -1,7 +1,6 @@
 # Simple to do list
 
 to-do list made only with HTML, CSS and javascript
-
 ## Functionalities
 
 - Theme dark e light
@@ -10,12 +9,11 @@ to-do list made only with HTML, CSS and javascript
 
 ## Demonstration
 
-![preview project](assets/to%20do%20preview.png)
+![preview project](assets/preview.png)
 
 > Press CTRL + click to open in new  tab
 
 https://ronalt4cs.github.io/To-do-list/
-
 
 ## Links
 
