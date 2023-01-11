@@ -13,7 +13,7 @@ to-do list made only with HTML, CSS and javascript
 
 > Press CTRL + click to open in new  tab
 
-https://ronalt4cs.github.io/To-do-list/
+<a href="https://ronalt4cs.github.io/To-do-list/" target="_blank">Project link</a>
 
 ## Links
 
